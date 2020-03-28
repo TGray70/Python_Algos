@@ -15,3 +15,25 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+def cal_ev_not_ev():
+    try:
+        NUMBER = int(input('Введите число (0 чтобы выйти): '))
+        if NUMBER == 0:
+            print('ok, отдыхаем.')
+            return
+        EVEN = 0
+        NOT_EV = 0
+        for i in str(NUMBER):
+            i = int(i)
+            if (i % 2) == 0:
+                EVEN += 1
+            else:
+                NOT_EV += 1
+        S = EVEN + NOT_EV
+        print(f'В числе {NUMBER} {S} цифры, четных - {EVEN}, не четных - {NOT_EV}')
+        return cal_ev_not_ev()
+    except ValueError:
+        print('Вы ввели не число, давайте сначала.')
+        return cal_ev_not_ev()
+
+cal_ev_not_ev()

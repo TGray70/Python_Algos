@@ -7,3 +7,24 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+def guess(N0, i):
+    if i == 0:
+        print('you loose')
+        return
+    N = int(input('Ваше число: '))
+    if N == N0:
+        print('you win!')
+        return
+    if N > N0:
+        print('меньше')
+        return guess(N0, i-1)
+    else:
+        print('больше')
+        return guess(N0, i - 1)
+
+
+from random import randint
+N0 = randint(1, 100)
+print(N0)
+guess(N0, 10)

@@ -32,3 +32,30 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+while True:
+    OPERATON = input('Введите операцию (0 чтобы выйти): ')
+    if OPERATON == '0':
+        print('ok, отдыхаем.')
+        break
+    while OPERATON not in '+-*/':
+        OPERATON = input('Вы ошиблись, введите операцию: ')
+        if OPERATON == '0':
+            print('ok, отдыхаем.')
+            break
+    try:
+        NUM1 = int(input('Введите число: '))
+        NUM2 = int(input('Введите второе число: '))
+        if OPERATON == '+':
+            RESULT = NUM1 + NUM2
+        if OPERATON == '-':
+            RESULT = NUM1 - NUM2
+        if OPERATON == '*':
+            RESULT = NUM1 * NUM2
+        if OPERATON == '/':
+            if NUM2 == 0:
+                print('Делить на 0 нельзя')
+            RESULT = NUM1 / NUM2
+        print(f'{NUM1} {OPERATON} {NUM2} = {RESULT}')
+    except ValueError:
+        print('Вы ввели не число, давайте сначала.')

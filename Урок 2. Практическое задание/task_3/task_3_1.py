@@ -12,3 +12,17 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+while True:
+    try:
+        NUMBER = int(input('Введите число (0 чтобы выйти): '))
+        if NUMBER == 0:
+            print('ok, отдыхаем.')
+            break
+        N1 = 0
+        while NUMBER != 0:
+            N1 *= 10
+            N1 += (NUMBER % 10)
+            NUMBER //= 10
+        print(f'Перевернутое число {N1}')
+    except ValueError:
+        print('Вы ввели не число, давайте сначала.')

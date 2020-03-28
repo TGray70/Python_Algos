@@ -12,3 +12,21 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+while True:
+    try:
+        NUMBER = int(input('Введите число (0 чтобы выйти): '))
+        if NUMBER == 0:
+            print('ok, отдыхаем.')
+            break
+        EVEN = 0
+        NOT_EV = 0
+        for i in str(NUMBER):
+            i = int(i)
+            if (i % 2) == 0:
+                EVEN +=1
+            else:
+                NOT_EV +=1
+        S = EVEN + NOT_EV
+        print(f'В числе {NUMBER} {S} цифры, четных - {EVEN}, не четных - {NOT_EV}')
+    except ValueError:
+        print('Вы ввели не число, давайте сначала.')
