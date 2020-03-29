@@ -11,3 +11,17 @@
 6 позиции, а минимальное число  -49 стоит на    0 позиции
 [-49, 26, 41, 75, 23, 52, 88, 60, 69, -18]
 """
+from random import randint
+
+LST = [randint(-99, 100) for i in range(10)]
+MAX_V = max(LST)
+MIN_V = min(LST)
+I_MAX = LST.index(MAX_V)
+I_MIN = LST.index(MIN_V)
+print(f'В данном массиве чисел максимальное число {MAX_V} стоит на {I_MAX} позиции,')
+print(f'а минимальное число {MIN_V} стоит на {I_MIN} позиции')
+print(f'{LST}, Заменяем их:')
+LST[I_MAX], LST[I_MIN] = MIN_V, MAX_V
+print(f'В данном массиве чисел максимальное число {MAX_V} стоит на {I_MIN} позиции,')
+print(f'а минимальное число {MIN_V} стоит на {I_MAX} позиции')
+print(LST)

@@ -36,3 +36,17 @@
 [3, 3, 3, 3, 12]
 [3, 3, 3, 3, 12]
 """
+
+M = []
+for s in range(5):
+    A = []
+    S = 0
+    for n in range(4):
+        el = int(input(f'Введите число строка {s + 1}, елемент {n + 1}: '))
+        A.append(el)
+        S += el
+    A.append(S)
+    M.append(A)
+for i in range(5):
+    print(M[i])
+print(f'матрица {M}')

@@ -13,3 +13,21 @@
 Массив: [88, 58, 50, 77, 49, 6, 42, 67, 14, 79]
 Сумма элементов между минимальным (6)  и максимальным (88) элементами: 234
 """
+
+
+def calc(lst, x, y):
+    sum = 0
+    i = 0
+    while i < (x - y - 1):
+        sum += int(lst[y + 1 + i])
+        i += 1
+    print(f'Сумма элементов между минимальным {lst[x]} и максимальным {lst[y]} элементами: {sum}')
+
+
+LST = [88, 58, 50, 77, 49, 6, 42, 67, 14, 79]
+I_MAX = LST.index(max(LST))
+I_MIN = LST.index(min(LST))
+if I_MAX > I_MIN:
+    calc(LST, I_MAX, I_MIN)
+else:
+    calc(LST, I_MIN, I_MAX)
