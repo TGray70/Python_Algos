@@ -6,3 +6,13 @@
 массива. Но если это слишком сложно, то используйте метод сортировки,
 который не рассматривался на уроках
 """
+import random
+
+LST = [random.randint(-100, 100) for i in range(0,15)]
+
+i = 0
+print(LST)
+while i < (len(LST) / 2):
+    LST.remove(min(LST))
+    i += 1
+print(f'медиана: {min(LST)}')

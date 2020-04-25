@@ -9,3 +9,22 @@
 Подсказка: обратите внимание, сортируем не по возрастанию, как в примере,
 а по убыванию
 """
+import random
+
+LST = [random.randint(-100, 100) for i in range(0,20)]
+print(LST)
+
+n = 1
+while n < len(LST):
+     for i in range(len(LST)-n):
+          if LST[i] < LST[i+1]:
+               LST[i],LST[i+1] = LST[i+1],LST[i]
+     n += 1
+print(LST)
+
+
+
+
+
+
+
